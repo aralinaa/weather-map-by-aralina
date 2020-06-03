@@ -1,35 +1,42 @@
 import React from 'react'
 import Head from './head'
-import Header from './header'
 
 const City = (props) => {
   if (props.weather.main === undefined) {
     return <div>Loading . . .</div>
   }
   return (
-    <div>
+    <div className="flex mt-48 mx-40 bg-city justify-around">
       <Head title="weather" />
-      <Header />
-      <div className="container mx-auto">
-        <div className=" p-6">
-          <div className="">
-            <div className="">
-              <p>feels: {props.weather.main.temp}</p>
-            </div>
-            <div className="">Cloudy </div>
-          </div>
-          <div className="">
-            <p> hello</p>
-          </div>
+      <div className="flex ml-10 flex-col ">
+        <div className=" mb-8 mt-24 shadow-lg">
+          <p className="font-semibold mb-1">feels:</p>
+          <p className="font-normal">{props.weather.main.feels_like} C </p>
         </div>
-        <div className=" p-6"> 2</div>
+        <div className=" mb-8 shadow-lg">
+          <p className="font-semibold mb-1">humidity:</p>
+          <p className="font-normal">{props.weather.main.humidity}%</p>
+        </div>
+        <div className=" mb-8">
+          <p className="font-semibold mb-1 ">pressure: </p>
+          <p>{props.weather.main.pressure}hpa</p>
+        </div>
+        <div className=" mb-8">
+          <p className="font-semibold mb-1">max temp:</p>
+          <p className="font-normal">{props.weather.main.temp_max} C </p>
+        </div>
+        <div className="mb-8 ">
+          <p className="font-semibold mb-1">min temp:</p>
+          <p className="font-normal shadow-lg">{props.weather.main.temp_min} C </p>
+        </div>
       </div>
-      <div className="container mx-auto">
-        <div className=""> 1</div>
-        <div className=""> 2</div>
-        <div className="">3 </div>
-        <div className="">4 </div>
-        <div className="">5 </div>
+      <div className="flex  flex-col ml-20 mt-24  mr-20">
+        <div className=" mb-8"> 1</div>
+        <div className=" mb-8 mt-16 "> {props.userCity}</div>
+        <div className=" mb-8 mt-24">
+          {' '}
+          <p>{props.weather.main.temp} C </p>{' '}
+        </div>
       </div>
     </div>
   )

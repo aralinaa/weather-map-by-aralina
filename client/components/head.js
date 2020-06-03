@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 
 const Head = (props) => (
@@ -11,12 +10,6 @@ const Head = (props) => (
   </Helmet>
 )
 
-Head.propTypes = {
-  title: PropTypes.string
-}
-
-Head.defaultProps = {
-  title: 'igorsamartsev.ru'
-}
+Head.propTypes = {}
 
 export default Head
